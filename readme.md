@@ -1,3 +1,11 @@
+## Grunt
+
+This repository uses [Grunt](http://gruntjs.com/) for lint, code sniffing and unit testing. Sniffing will to PSR2 standards.
+
+There are hooks in place with Grunt to run before a commit.
+
+The Laravel framework has been altered with [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer) to bring it to PSR2 standards.
+
 ## Laravel PHP Framework
 
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
