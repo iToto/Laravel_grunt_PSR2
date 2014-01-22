@@ -1,0 +1,8 @@
+#!/bin/sh
+# Add path /usr/local/bin for globally installed grunt (Sublime Git Issue)
+PATH=$PATH:/usr/local/bin:/usr/local/sbin
+# Pre-commit hooks
+
+# Run Grunt before committing
+grunt phplint
+grunt phpcs

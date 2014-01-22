@@ -2,11 +2,16 @@
   "name": "test",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-phpcs"        : "~0.2.1",
-    "grunt-php"          : "~0.3.2",
-    "grunt-phplint"      : "~0.0.5",
-    "grunt-phpunit"      : "~0.3.2"
+    "grunt"               : "~0.4.2",
+    "grunt-phpcs"         : "~0.2.1",
+    "grunt-php"           : "~0.3.2",
+    "grunt-phplint"       : "~0.0.5",
+    "grunt-phpunit"       : "~0.3.2",
+    "grunt-contrib-clean" : "~0.4.0",
+    "grunt-shell"         : "~0.6.3"
+  },
+  "scripts": {
+      "postinstall": "grunt hookmeup"
   }
 
 }

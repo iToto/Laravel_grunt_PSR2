@@ -4,6 +4,18 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    // Clean stuff up
+    clean: {
+      // Clean any pre-commit hooks in .git/hooks directory
+      hooks: ['.git/hooks/pre-commit']
+    },
+    // Run shell commands
+    shell: {
+      hooks: {
+        // Copy the project's pre-commit hook into .git/hooks
+        command: 'cp git-hooks/pre-commit .git/hooks/'
+      }
+    },
     php: {
         dist: {
             options: {
@@ -21,7 +33,6 @@ module.exports = function(grunt) {
         options: {
             bin: 'phpcs',
             standard: 'PSR2',
-            reportFile: 'phpcs.log',
             ignore: 'views/*,tests/*'
         }
     },
@@ -54,7 +65,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-phplint');
   grunt.loadNpmTasks('grunt-phpunit');
   grunt.loadNpmTasks('grunt-php-analyzer');
-  grunt.registerTask('precommit', ['phplint:all', 'phpunit:unit']);
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-shell');
+
+  // Clean the .git/hooks/pre-commit file then copy in the latest version
+  grunt.registerTask('hookmeup', ['clean:hooks', 'shell:hooks']);
   grunt.registerTask('default', ['phplint:all', 'phpcs', 'phpunit:unit']);
   grunt.registerTask('server', ['php']);
 };
