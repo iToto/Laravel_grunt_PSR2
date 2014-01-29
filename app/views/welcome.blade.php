@@ -363,6 +363,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    {{ HTML::style('js/bootstrap.min.js') }}
+    {{ HTML::script('js/bootstrap.min.js') }}
   </body>
 </html>
