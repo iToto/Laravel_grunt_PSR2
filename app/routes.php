@@ -14,12 +14,5 @@
 Route::get('/', function () {
     Log::info('Index requested');
 
-    return \Response::json(
-        array(
-                'error'   => 0,
-                'message' => "Hello World",
-                'data'    => null
-        ),
-        200
-    );
+    return View::make('welcome');
 });
