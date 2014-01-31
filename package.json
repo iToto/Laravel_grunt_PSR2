@@ -8,7 +8,8 @@
     "grunt-phplint"       : "~0.0.5",
     "grunt-phpunit"       : "~0.3.2",
     "grunt-contrib-clean" : "~0.4.0",
-    "grunt-shell"         : "~0.6.3"
+    "grunt-shell"         : "~0.6.3",
+    "grunt-php-analyzer"  : "~0.1.0"
   },
   "scripts": {
       "postinstall": "grunt hookmeup"
